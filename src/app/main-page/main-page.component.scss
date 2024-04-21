@@ -1,0 +1,12 @@
+div {
+    display: flex;
+}
+
+app-main {
+    flex: 3;
+    padding-right: 10px;
+}
+
+app-aside {
+    flex: 1;
+}

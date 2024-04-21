@@ -1,0 +1,10 @@
+<article *ngIf="note">
+    <h3>{{ note.title }}</h3>
+    <span>Категория: <strong>{{ note.category }}</strong></span><br>
+    <span>Автор: <strong>{{ note.author }}</strong></span><br>
+    <span>{{ note.content }}</span>
+    <div class="bttns">
+        <button class="delete-btn">Удалить</button>
+        <button class="archive-btn">Архив</button>
+    </div>
+</article>

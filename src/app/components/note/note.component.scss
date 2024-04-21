@@ -1,0 +1,29 @@
+.bttns {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bttns button{
+    width: auto;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+
+}
+
+.delete-btn {
+    background-color: #cf3a15;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+
+}
+
+.archive-btn {
+    background-color: #a3ae9e;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    margin-left: 10px;
+
+}

@@ -1,0 +1,14 @@
+.main {
+    border: dashed 0.2rem #006b09;
+    border-radius: 15px;
+    box-shadow: 0.5em 1em 0.5em 0em rgba(64, 73, 59, 0.281);
+    padding: 10px;
+}
+
+
+:host ::ng-deep app-header h1{
+    background-color: white;
+    color: black;
+    border-bottom-color: #07b148;
+  }
+  

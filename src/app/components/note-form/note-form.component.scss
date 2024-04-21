@@ -1,0 +1,35 @@
+button {
+    background-color: #006b09;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:focus {
+    background-color: #07b148;
+  }
+
+  label {
+    margin: 3%;
+  }
+  
+
+  input, textarea {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid #40493B; /* Нижняя граница с цветом #40493B */
+    padding: 5px;
+    width: 90%;
+  }
+  
+  textarea{
+    height: 300px;
+    border: 2px solid #40493B;;
+  }
+
+  form {
+    text-align: start;/* Центрирование элементов в форме */
+  }
