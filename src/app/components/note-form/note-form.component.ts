@@ -1,27 +1,7 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-note-form',
-//     templateUrl: './note-form.component.html',
-//   styleUrls: ['./note-form.component.scss']
-// })
-
-// export class NoteFormComponent {
-//   note = {
-//     author: '',
-//     title: '',
-//     category: '',
-//     content: ''
-//   };
-
-//   onSubmit() {
-//     console.log(this.note);
-//   }
-// }
-
-
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms'; // Импортируйте ReactiveFormsModule здесь
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { CreateNoteService } from '../../create-note-service';
+import { MyNote } from '../note-list/note-list.component';
 
 @Component({
   selector: 'app-note-form',
@@ -38,10 +18,17 @@ export class NoteFormComponent {
     content: new FormControl('')
     });
 
+    constructor(private createNoteService: CreateNoteService) {}
 
-  onSubmit() {
-    console.log(this.note.value); // Получите значения формы
-  }
+    onSubmit() {
+      if (this.note.valid) {
+        const noteData = Object.assign({}, this.note.value) as MyNote;
+        this.createNoteService.addNote(noteData);
+        console.log(this.createNoteService.myNotes$);
+      } else {
+        console.error('Form is not valid');
+      }
+    }
 }
 
 
