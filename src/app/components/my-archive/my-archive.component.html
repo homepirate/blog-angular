@@ -1,0 +1,6 @@
+<app-header [NAME]="'Архив'"></app-header>
+<ul>
+ <li *ngFor="let note of archiveNotes">
+    {{ note.title }}
+ </li>
+</ul>

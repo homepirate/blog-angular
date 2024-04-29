@@ -23,8 +23,23 @@ export class CreateNoteService {
   ]);
   myNotes$ = this.myNotesSubject.asObservable();
 
+  private archivedNotesSubject = new BehaviorSubject<MyNote[]>([]);
+  archivedNotes$ = this.archivedNotesSubject.asObservable()
+
   addNote(note: MyNote) {
     const updatedNotes = [...this.myNotesSubject.getValue(), note];
     this.myNotesSubject.next(updatedNotes);
+  }
+
+  deleteNote(index: number) {
+    const currentNotes = this.myNotesSubject.getValue();
+    currentNotes.splice(index, 1);
+    this.myNotesSubject.next(currentNotes);
+  }
+
+  archiveNote(index: number, note: MyNote) {
+    const archivedNotes = [...this.archivedNotesSubject.getValue(), note];
+    this.archivedNotesSubject.next(archivedNotes);
+    this.deleteNote(index)
   }
 }

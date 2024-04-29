@@ -4,7 +4,7 @@
     <span>Автор: <strong>{{ note.author }}</strong></span><br>
     <span>{{ note.content }}</span>
     <div class="bttns">
-        <button class="delete-btn">Удалить</button>
-        <button class="archive-btn">Архив</button>
+        <button (click)="removeNote()" class="delete-btn">Удалить</button>
+        <button (click)="archiveNote()" class="archive-btn">Архив</button>
     </div>
 </article>
